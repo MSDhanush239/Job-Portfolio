@@ -1,33 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Basic HTML Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MS Dhanush - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <h1>Welcome to My Basic HTML Page</h1>
-    <p>This is a simple HTML document.</p>
+  <header>
+    <nav class="navbar">
+      <div class="logo">MS Dhanush</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
+  <section id="home" class="hero">
+    <h1>Hi, I'm <span class="highlight">MS Dhanush</span></h1>
+    <p>Aspiring Full-Stack Developer | Tech Enthusiast | Problem Solver</p>
+  </section>
 
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" required><br><br>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a B.Tech Computer Science student from VIT Chennai. Passionate about building web applications,
+      solving real-world problems, and constantly learning new technologies. I love exploring AI, Web Dev, and DevOps.
+    </p>
+  </section>
 
-        <label for="bloodgroup">Blood Group:</label>
-        <select id="bloodgroup" name="bloodgroup" required>
-            <option value="">Select</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="AB">AB</option>
-            <option value="O">O</option>
-        </select><br><br>
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>B. Tech in Computer Science</strong><br>VIT University, Chennai</p>
+  </section>
 
-        <button type="submit">Submit</button>
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript (ES6+)</li>
+      <li>React.js</li>
+      <li>Node.js</li>
+      <li>MongoDB</li>
+      <li>Git & GitHub</li>
+      <li>Docker</li>
+      <li>AWS Basics</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Smart Irrigation System</h3>
+      <p>An IoT-based system to monitor soil moisture and automate irrigation using Arduino and sensors.</p>
+    </div>
+    <div class="project-card">
+      <h3>Banana Quality Checker</h3>
+      <p>ML model that detects fruit freshness using OpenCV and TensorFlow, integrated with Arduino weight sensors.</p>
+    </div>
+    <div class="project-card">
+      <h3>Employee Portal on AWS</h3>
+      <p>A web portal using AWS Amplify, S3, DynamoDB, Cognito for login and data management.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
     </form>
+  </section>
 
-    <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2025 MS Dhanush. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>

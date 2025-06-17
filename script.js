@@ -1,23 +1,28 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
+// Scroll reveal effect (simple version)
+window.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll("section");
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    if (sectionTop < window.innerHeight - 100) {
+      section.style.opacity = 1;
+      section.style.transform = "translateY(0)";
+    }
+  });
+});
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+// Initial load animations
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section");
+  sections.forEach(section => {
+    section.style.opacity = 0;
+    section.style.transform = "translateY(40px)";
+    section.style.transition = "all 0.6s ease-out";
+  });
+});
 
-        const name = document.getElementById('name').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const bloodGroup = document.getElementById('bloodgroup').value;
-
-        if (!name || !phone || !bloodGroup) {
-            alert('Please fill in all fields.');
-            return;
-        }
-
-        alert(
-            `Name: ${name}\nPhone: ${phone}\nBlood Group: ${bloodGroup}`
-        );
-
-        // Optionally, you can reset the form after submission
-        form.reset();
-    });
+// Form submission placeholder
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  alert("Message sent! (Demo only)");
+  this.reset();
 });

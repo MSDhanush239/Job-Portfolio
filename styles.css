@@ -1,60 +1,112 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  scroll-behavior: smooth;
 }
 
-h1 {
-    color: #333;
-    text-align: center;
-    margin-top: 30px;
+header {
+  background-color: #161b22;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-p {
-    text-align: center;
-    color: #555;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #58a6ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #c9d1d9;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #58a6ff;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero {
+  text-align: center;
+  background: linear-gradient(to right, #1f1f1f, #0d1117);
+  padding: 100px 20px;
+}
+
+.highlight {
+  color: #58a6ff;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  list-style: none;
+}
+
+.project-card {
+  background-color: #161b22;
+  border-left: 4px solid #58a6ff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
 
 form {
-    background: #fff;
-    max-width: 400px;
-    margin: 40px auto;
-    padding: 30px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #222;
-    font-weight: bold;
+input, textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
 }
 
-input[type="text"],
-input[type="tel"],
-select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 18px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+button {
+  background-color: #58a6ff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-button[type="submit"] {
-    width: 100%;
-    background: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.2s;
+button:hover {
+  background-color: #1f6feb;
 }
 
-button[type="submit"]:hover {
-    background: #45a049;
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #161b22;
+  color: #8b949e;
 }
