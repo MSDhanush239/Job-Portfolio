@@ -1,2 +1,2 @@
 # CourseEraProject
-A basic web page designed using HTML,CSS and JavaScript additionally assessed by the help of Microsoft Co pilot
+A portfolio including my  education, technical skills, contact info and projects.
