@@ -1,112 +1,205 @@
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Base Styles */
+:root {
+  --primary-color: #1a73e8;
+  --secondary-color: #34a853;
+  --bg-color: #f0f2f5;
+  --text-color: #333;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0d1117;
-  color: #c9d1d9;
-  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
 }
 
-header {
-  background-color: #161b22;
-  padding: 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+h1 {
+  font-size: 2.5rem;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+h2 {
+  font-size: 2rem;
+  margin-top: 0;
 }
 
-.logo {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #58a6ff;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #c9d1d9;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #58a6ff;
-}
-
-section {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.hero {
+header, footer {
+  background: var(--primary-color);
+  color: white;
   text-align: center;
-  background: linear-gradient(to right, #1f1f1f, #0d1117);
-  padding: 100px 20px;
+  padding: 1rem;
 }
 
-.highlight {
-  color: #58a6ff;
+nav a {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  position: relative;
 }
 
-.skills-list {
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Tooltip */
+nav a::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+nav a:hover::after {
+  opacity: 1;
+}
+
+/* Section & Layout */
+section {
+  padding: 2rem;
+  background: var(--bg-color);
+}
+
+.portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
-  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
-.project-card {
-  background-color: #161b22;
-  border-left: 4px solid #58a6ff;
-  padding: 15px;
-  margin-bottom: 20px;
+.project img {
+  width: 100%;
+  display: block;
   border-radius: 8px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.project:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.project {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Contact Form */
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
 }
 
 input, textarea {
-  padding: 10px;
-  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 button {
-  background-color: #58a6ff;
-  color: #fff;
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
   border: none;
-  padding: 10px;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 4px;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #1f6feb;
+  background: #2c8c47;
 }
 
-footer {
-  text-align: center;
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
   padding: 20px;
-  background-color: #161b22;
-  color: #8b949e;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.close-modal {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    padding: 1rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  form {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  form {
+    width: 70%;
+  }
 }
